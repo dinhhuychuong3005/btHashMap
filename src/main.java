@@ -33,12 +33,30 @@ public class main {
                     break;
                 }
                 case 3: {
-                    System.out.println("Nhập vào ID cần tìm");
-                    int id = sc.nextInt();
-                    if (managerStudent.check(id)) {
-                        System.out.println(managerStudent.seach(id));
-                    } else {
-                        System.out.println("không có ID này");
+                    System.out.println("1.Tìm theo ID");
+                    System.out.println("2.Tìm theo tên");
+                    int line = sc.nextInt();
+                    switch (line) {
+                        case 1: {
+                            System.out.println("Nhập vào ID cần tìm");
+                            int id = sc.nextInt();
+                            if (managerStudent.check(id)) {
+                                System.out.println(managerStudent.seach(id));
+                            } else {
+                                System.out.println("không có ID này");
+                            }
+                            break;
+                        }
+                        case 2:{
+                            sc.nextLine();
+                            System.out.println("Nhập vào tên cần tìm");
+                            String name = sc.nextLine();
+                            managerStudent.searchName(name);
+                            break;
+                        }
+                        default:
+                            System.out.println("nhập lại");
+                            break;
                     }
                     break;
                 }

@@ -29,6 +29,18 @@ public class ManagerStudent {
     public Student seach(int id) {
         return map.get(id);
     }
+    public void searchName(String name){
+        Set<Integer> key = map.keySet();
+        for (Integer key1 : key){
+            if (name.equals(map.get(key1).getName())){
+                System.out.println(map.get(key1));
+                break;
+            }else {
+                System.out.println("không có tên này");
+                break;
+            }
+        }
+    }
 
     public void delete(int id) {
         map.remove(id);
